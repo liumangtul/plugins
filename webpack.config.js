@@ -4,14 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-        entry: __dirname + "/public/main.js", //已多次提及的唯一入口文件
+        entry: __dirname + "/app/main.js", //已多次提及的唯一入口文件
         output: {
             path: __dirname + "/build",
             filename: "bundle.js"
         },
         devtool: 'none',
         devServer: {
-            contentBase: "./public", //本地服务器所加载的页面所在的目录
+            contentBase: "./app", //本地服务器所加载的页面所在的目录
             historyApiFallback: true, //不跳转
             inline: true,
             hot: true
@@ -25,7 +25,7 @@ module.exports = {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: __dirname + "/keySearch.html" //new 一个这个插件的实例，并传入相关的参数
+                template: __dirname + "/quill.html" //new 一个这个插件的实例，并传入相关的参数
             }),
             new webpack.optimize.OccurrenceOrderPlugin(),
             new webpack.optimize.UglifyJsPlugin(),
